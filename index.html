@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="currency" content="INR">
+  <title>My Money does giggle giggle!!</title>
+  <link rel="stylesheet" href="Finance.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>My Money does giggle giggle!!</h1>
+    </div>
+    <div class="header-buttons">
+      <a href="#overview"><i class="fas fa-chart-bar"></i> Overview</a>
+      <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+      <a href="#contact"><i class="fas fa-phone"></i> Contact</a>
+      <button id="login-btn" class="login-signup">Login</button>
+      <button id="signup-btn" class="login-signup">Sign Up</button>
+    </div> 
+  <main>
+<form id="login-form" class="auth-form">
+  <h2>Login</h2>
+  <input type="text" id="login-username" placeholder="Username" required>
+  <input type="password" id="login-password" placeholder="Password" required>
+  <button type="submit">Login</button>
+</form>
+<form id="signup-form" class="auth-form">
+  <h2>Sign Up</h2>
+  <input type="text" id="signup-username" placeholder="Username" required>
+  <input type="password" id="signup-password" placeholder="Password" required>
+  <button type="submit">Sign Up</button>
+</form>
+<section class="dashboard-section">
+<section id="overview" class="dashboard-overview">
+      <section class="dashboard-section">
+        <h2>Expense Categories</h2>
+        <div class="category-card">
+          <h3>Food</h3>
+          <p>₹2000</p>
+        </div>
+        <div class="category-card">
+          <h3>Entertainment</h3>
+          <p>₹1500</p>
+        </div>
+        <div class="category-card">
+          <h3>Rent</h3>
+          <p>₹5000</p>
+        </div>
+        <h2>Spending Summary</h2>
+        <canvas id="spendingChart"></canvas>
+    </section>
+      <h2>Overview</h2>
+      <div class="overview-cards">
+        <div class="card">
+          <h3>Total Income</h3>
+          <p id="total-income">&#8377; 75,000</p>
+        </div>
+        <div class="card">
+          <h3>Total Expenses</h3>
+          <p id="total-expenses">&#8377; 50,000</p>
+        </div>
+        <div class="card">
+          <h3>Net Balance</h3>
+          <p id="net-balance">&#8377; 25,000</p>
+        </div>
+      </div>
+    </section>
+    <section class="monthly-report">
+      <h2>Monthly Report</h2>
+      <label for="report-month">Select Month:</label>
+      <input type="month" id="report-month">
+      <button id="generate-report">Generate Report</button>
+      <div id="report-results">
+        <h3>Report for <span id="report-month-display">September 2024</span></h3>
+        <p>Total Income: ₹<span id="report-income">75,000</span></p>
+        <p>Total Expenses: ₹<span id="report-expenses">50,000</span></p>
+        <p>Net Balance: ₹<span id="report-balance">25,000</span></p>
+      </div>
+    </section>
+    <section class="transaction-section">
+      <h2>Transaction Management</h2>
+      <div class="transaction-history">
+        <input type="text" id="searchTransactions" placeholder="Search Transactions">
+        <ul id="transactionList">
+          <li>₹500 - Food - 01/05/2024</li>
+          <li>₹200 - Transportation - 01/06/2024</li>
+          <li>₹3,000 - Rent - 01/10/2024</li>
+          <li>₹1,500 - Entertainment - 01/12/2024</li>
+        </ul>
+      </div>
+      <div class="transaction-forms">
+        <form id="income-form" class="transaction-form">
+          <h3>Add Income</h3>
+          <input type="text" id="income-description" placeholder="Description" required>
+          <input type="number" id="income-amount" placeholder="Amount" required>
+          <button type="submit">Add Income</button>
+        </form>
+        <form id="expense-form" class="transaction-form">
+          <h3>Add Expense</h3>
+          <input type="text" id="expense-description" placeholder="Description" required>
+          <input type="number" id="expense-amount" placeholder="Amount" required>
+          <button type="submit">Add Expense</button>
+        </form>
+      </div>
+    </section>
+    <section class="budget-overview">
+      <h2>Budget Overview</h2>
+      <div class="budget-category">
+        <ul class="budget-list">
+          <li>₹500 - Food</li>
+        </ul>
+        <div class="progress-bar">
+          <div class="progress" style="width: 75%;"></div>
+        </div>
+      </div>
+      <div class="budget-category">
+        <ul class="budget-list">
+          <li>₹200 - Transportation</li>
+        </ul>
+        <div class="progress-bar">
+          <div class="progress" style="width: 80%;"></div>
+        </div>
+      </div>
+      <div class="budget-category">
+        <ul class="budget-list">
+          <li>₹3,000 - Rent</li>
+        </ul>
+        <div class="progress-bar">
+          <div class="progress" style="width: 60%;"></div>
+        </div>
+      </div>
+    </section>
+    <section class="wallets">
+      <h2>Wallets</h2>
+      <div class="wallet">
+        <h4>INR Wallet</h4>
+        <p>₹12,000</p>
+      </div>
+      <div class="wallet">
+        <h4>USD Wallet</h4>
+        <p>$500 (₹37,500)</p>
+      </div>
+    </section>
+    <section class="subscriptions">
+      <h3>Manage Subscriptions</h3>
+      <div class="subscription-item">
+        <p>Netflix - ₹1,200/month</p>
+        <button class="cancel-btn">Cancel</button>
+      </div>
+      <div class="subscription-item">
+        <p>Spotify - ₹500/month</p>
+        <button class="cancel-btn">Cancel</button>
+      </div>
+      <div class="subscription-item">
+        <p>Amazon Prime - ₹999/year</p>
+        <button class="cancel-btn">Cancel</button>
+      </div>
+    </section>
+    <section id="profile" class="profile-section">
+      <h2>User Profile</h2>
+      <div class="profile-info">
+        <div class="profile-picture">
+          <img src="desktop.jpg" alt="Profile Picture" id="profile-img">
+        </div>
+        <div class="profile-details">
+          <h3 id="profile-name">Jay Vandana</h3>
+          <p id="profile-email">jayVandana@gmail.com</p>
+          <p id="profile-balance">Current Balance: ₹<span id="profile-balance-amount">99,00,000</span></p>
+        </div>
+      </div>
+      <div class="financial-summary">
+        <h3>Financial Summary</h3>
+        <p>Total Income: ₹<span id="profile-total-income">1,00,00,000</span></p>
+        <p>Total Expenses: ₹<span id="profile-total-expenses">2,00,000</span></p>
+        <p>Net Balance: ₹<span id="profile-net-balance">98,00,000</span></p>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-links">
+        <a href="linkedin.com/in/richa-bharti-508ba0283" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/RichBandana" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="mailto:richab820@gmail.com">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </div>
+      <div class="contact-form">  
+        <input type="text" id="contact-name" placeholder="Your Name" required>
+        <input type="email" id="contact-email" placeholder="Your Email" required>
+        <textarea id="contact-message" placeholder="Your Message" required></textarea>
+        <button id="send-message-button">Talk to Us :) </button>
+      </div>
+      <div id="contact-message-status"></div> 
+    </section>
+  </main>
+    <footer class="footer">
+      <div class="container">
+        <p>&copy;  My Money does giggle giggle. </p>
+        <p class="footer-text">Made with <i class="fas fa-heart"></i> by Richa</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="Finance.js"></script>
+</body>
+</html>
